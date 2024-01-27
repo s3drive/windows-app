@@ -1,1 +1,1 @@
-# appimage-app
+# windows-app
