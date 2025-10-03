@@ -1,0 +1,15 @@
+name: Publish to WinGet
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish:
+    runs-on: windows-latest
+    steps:
+      - uses: vedantmgoyal9/winget-releaser@v2
+        with:
+          identifier: S3Drive.S3Drive
+          token: ${{ secrets.WINGET_TOKEN }}
+          installers-regex: 's3drive-win-x64.*\.exe$'
